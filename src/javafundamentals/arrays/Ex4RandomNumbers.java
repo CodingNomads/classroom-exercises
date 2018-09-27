@@ -6,7 +6,14 @@ package javafundamentals.arrays;
 
 public class Ex4RandomNumbers {
     public static void main(String[] args) {
-        int[] randomArray = {12,143,654,34,5,76,37,42};
+        int[] randomArray = new int[10];
+
+        System.out.println("Of the following numbers:");
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = (int)(Math.random() * 100 + 1);
+
+            System.out.println("Index " + i + ": " + randomArray[i]);
+        }
 
         int biggestNumberIndex = 0;
 
@@ -16,6 +23,6 @@ public class Ex4RandomNumbers {
             }
         }
 
-        System.out.println(biggestNumberIndex);
+        System.out.println("The largest is at index " + biggestNumberIndex);
     }
 }
