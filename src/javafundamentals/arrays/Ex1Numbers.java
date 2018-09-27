@@ -9,5 +9,15 @@ package javafundamentals.arrays;
  */
 
 public class Ex1Numbers {
+    public static void main(String[] args) {
+        int[] myArray = new int[100];
+        for (int x = 0; x < 100; x++) {
+            myArray[x] = x;
+            if (myArray[x] % 2 != 0) {
+                myArray[x]--;
+            }
+            System.out.println(myArray[x]);
+        }
 
+    }
 }
