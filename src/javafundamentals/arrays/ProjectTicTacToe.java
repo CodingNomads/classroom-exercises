@@ -1,8 +1,6 @@
 package javafundamentals.arrays;
 
 
-import java.util.Scanner;
-
 /**
  * Fun time! Lets play tic tac toe! You will create your first videogame! Yeah!
  * <p>
