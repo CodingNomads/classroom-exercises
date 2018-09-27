@@ -34,5 +34,5 @@ package javafundamentals.arrays;
  *  "Aim for another, im already done!"
  * */
 
-public class Ex8ShootingTheChessboard {
+public class Ex9ShootingTheChessboard {
 }
