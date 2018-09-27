@@ -16,4 +16,32 @@ package javafundamentals.arrays;
  */
 
 public class Ex5BidimensionalArray {
+
+    public static void main(String[] args) {
+        String[][] myArray = new String[8][8];
+        print(creation(myArray));
+    }
+
+    public static String[][] creation(String[][] myArray) {
+        char letter = 'a';
+        for (int x = 0; x < 8; x++) {
+            for (int y = 0; y < 8; y++) {
+                myArray[x][y] = String.valueOf(letter) + (y + 1);
+            }
+            letter++;
+        }
+        return myArray;
+    }
+
+    public static void print(String[][] myArray) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(myArray[j][i]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+    //System.out.println(myArray);
 }
+
