@@ -25,11 +25,18 @@ public class Ex5BidimensionalArray {
             }
         }
 
+        System.out.println("*-----------------------*");
         for (int i = 0; i < chessPositions.length;i++) {
+            System.out.print("|");
             for (int j = 0; j < chessPositions.length;j++) {
-                System.out.print(chessPositions[i][j] + "\t");
+                if ( j != chessPositions.length-1) {
+                    System.out.print(chessPositions[i][j] + " ");
+                } else {
+                    System.out.print(chessPositions[i][j] + "|");
+                }
             }
             System.out.println();
         }
+        System.out.println("*-----------------------*");
     }
 }
