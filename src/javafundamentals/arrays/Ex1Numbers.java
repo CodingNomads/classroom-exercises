@@ -6,7 +6,8 @@ package javafundamentals.arrays;
  * 0 1 2 3 4 5
  * would have the output:
  * 0 0 2 2 4 4
- * */
+ */
+
 public class Ex1Numbers {
 
 }
