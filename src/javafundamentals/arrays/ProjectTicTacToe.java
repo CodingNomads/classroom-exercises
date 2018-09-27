@@ -13,4 +13,23 @@ package javafundamentals.arrays;
  */
 
 public class ProjectTicTacToe {
+    public static void main(String[] args) {
+        String[][] myArray = new String[5][5];
+        //gameFlow();
+        drawFirstBoard(myArray);
+    }
+
+    public static void gameFlow(){
+        //drawFirstBoard();
+    }
+
+    public static void drawFirstBoard(String[][] myArray){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                myArray[i][j]="X";
+                System.out.println(myArray[i][j]);
+            }
+            System.out.println();
+        }
+    }
 }

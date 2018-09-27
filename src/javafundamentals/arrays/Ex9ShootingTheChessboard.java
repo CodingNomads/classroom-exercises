@@ -1,5 +1,10 @@
 package javafundamentals.arrays;
 
+import com.sun.xml.internal.fastinfoset.util.StringArray;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * Create a chessboard that you can print (You can reuse the one from exercise 5).
  * Ask the user input for a coordinate (for example 'c6') and then substitute the 'c6' text for 'XX'
@@ -35,4 +40,67 @@ package javafundamentals.arrays;
  */
 
 public class Ex9ShootingTheChessboard {
+    public static void main(String[] args) {
+
+        gameCycle();
+    }
+
+    private static void gameCycle() {
+        String[][] boardgame = creation();
+        print(boardgame);
+        ArrayList<String> positionList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Type a location on the board:");
+            Scanner newscanner = new Scanner(System.in);
+            String position = newscanner.next();
+            positionList.add(position);
+            System.out.println(positionList);
+            print(mark(boardgame, positionList));
+        }
+    }
+
+    private static String[][] creation() {
+        String[][] myArray = new String[10][8];
+        char letter = 'a' - 1;
+        for (int x = 0; x < 10; x++) {
+            for (int y = 0; y < 8; y++) {
+                if (x == 0 || x == 9) {
+                    myArray[x][y] = "|";
+
+                } else {
+                    myArray[x][y] = String.valueOf(letter) + (y + 1);
+                }
+            }
+            letter++;
+        }
+        return myArray;
+    }
+
+
+    private static String[][] mark(String[][] myArray, ArrayList<String> positionList) {
+        for (int x = 0; x < 10; x++) {
+            for (int y = 0; y < 8; y++) {
+                if (positionList.contains(myArray[x][y])) {
+                    myArray[x][y] = "XX";
+                }
+            }
+        }
+        return myArray;
+    }
+
+
+    private static void print(String[][] myArray) {
+        System.out.println("*-------------------------*");
+        for (int i = 0; i < 8; i++) {
+
+            for (int j = 0; j < 10; j++) {
+                System.out.print(myArray[j][i]);
+                System.out.print(" ");
+            }
+            System.out.println();
+
+        }
+        System.out.println("*-------------------------*");
+    }
+
 }

@@ -26,7 +26,13 @@ public class Ex5BidimensionalArray {
         char letter = 'a';
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
-                myArray[x][y] = String.valueOf(letter) + (y + 1);
+                if (x == 0) {
+                    myArray[x][y] = "|" + String.valueOf(letter) + (y + 1);
+                } else if (x == 7) {
+                    myArray[x][y] = String.valueOf(letter) + (y + 1) + "|";
+                } else {
+                    myArray[x][y] = String.valueOf(letter) + (y + 1);
+                }
             }
             letter++;
         }
@@ -34,13 +40,17 @@ public class Ex5BidimensionalArray {
     }
 
     public static void print(String[][] myArray) {
+        System.out.println("*-----------------------*");
         for (int i = 0; i < 8; i++) {
+
             for (int j = 0; j < 8; j++) {
                 System.out.print(myArray[j][i]);
                 System.out.print(" ");
             }
             System.out.println();
+
         }
+        System.out.println("*-----------------------*");
     }
     //System.out.println(myArray);
 }
