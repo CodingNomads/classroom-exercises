@@ -16,4 +16,28 @@ package javafundamentals.arrays;
  */
 
 public class Ex5BidimensionalArray {
+    public static void main(String[] args) {
+        String[][] chessPositions = new String[8][8];
+
+        for (int i = 0; i < chessPositions.length; i++) {
+            for (int j = 0; j < chessPositions[i].length; j++) {
+                char column = (char)('a' + j);
+                chessPositions[i][j] = Character.toString(column) + (i+1);
+            }
+        }
+
+        System.out.println("*-----------------------*");
+        for (int i = 0; i < chessPositions.length;i++) {
+            System.out.print("|");
+            for (int j = 0; j < chessPositions.length;j++) {
+                if ( j != chessPositions.length-1) {
+                    System.out.print(chessPositions[i][j] + " ");
+                } else {
+                    System.out.print(chessPositions[i][j] + "|");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("*-----------------------*");
+    }
 }
