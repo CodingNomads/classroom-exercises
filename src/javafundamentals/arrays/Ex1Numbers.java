@@ -7,6 +7,6 @@ package javafundamentals.arrays;
  * would have the output:
  * 0 0 2 2 4 4
  * */
-public class Numbers {
+public class Ex1Numbers {
 
 }

@@ -5,6 +5,6 @@ package javafundamentals.arrays;
  * Find the common elements between the 2 arrays and print them
  * */
 
-public class CommonElements {
+public class Ex7CommonElements {
 
 }
