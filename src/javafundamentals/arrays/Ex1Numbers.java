@@ -9,5 +9,19 @@ package javafundamentals.arrays;
  */
 
 public class Ex1Numbers {
+    public static void main(String[] args) {
+        int[] numberArray = new int[100];
 
+        for (int i = 0; i < numberArray.length; i++) {
+            numberArray[i] = i;
+            System.out.println(numberArray[i]);
+        }
+
+        for (int i = 0; i < numberArray.length; i++) {
+            if (numberArray[i] % 2 != 0) {
+                numberArray[i] = numberArray[i-1];
+            }
+            System.out.println(numberArray[i]);
+        }
+    }
 }
