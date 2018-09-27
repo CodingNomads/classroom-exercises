@@ -1,7 +1,7 @@
 package javafundamentals.arrays;
 
 
-import java.util.Random;
+import java.util.Arrays;
 
 /**
  * Create an array of random numbers and print the index of the biggest number
@@ -11,23 +11,23 @@ public class Ex4RandomNumbers {
 
 
     public static void main(String[] args) {
-        Random[] arrayLength = new Random[50];
-        System.out.println(generateArray(arrayLength));
-
+        double[] arrayLength = new double[50];
+        Ex4RandomNumbers myObject = new Ex4RandomNumbers();
+        System.out.println(myObject.findBiggest(myObject.generateArray(arrayLength)));
     }
 
-    public static Random[] generateArray(Random[] length){
+    public double[] generateArray(double[] length){
         for(int x = 0; x<length.length; x++){
-            Random randomNum = new Random();
-            length[x] = randomNum;
-            System.out.println(length);
+            double randNumber = Math.random();
+            double d = randNumber * 100;
+            length[x] = d;
         }
         return length;
     }
 
-    public static int findBiggest(int[] myArray){
-        int answer = 0;
-        int location = 0;
+    public double findBiggest(double[] myArray){
+        double answer = 0;
+        double location = 0;
         for (int x=0; x<myArray.length; x++){
             if(myArray[x]>answer){
                 answer = myArray[x];
