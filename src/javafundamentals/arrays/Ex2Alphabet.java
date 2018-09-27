@@ -5,4 +5,12 @@ package javafundamentals.arrays;
  */
 
 public class Ex2Alphabet {
+    public static void main(String[] args) {
+        char[] alphabetArray = new char[26];
+
+        for (int i = 0; i < alphabetArray.length; i++) {
+            alphabetArray[i] = (char)('A' + i);
+            System.out.println(alphabetArray[i]);
+        }
+    }
 }
