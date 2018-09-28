@@ -6,4 +6,9 @@ package javafundamentals.arrays;
  */
 
 public class Ex3AgeStatistics {
+    public static void main(String[] args) {
+
+
+
+    }
 }
