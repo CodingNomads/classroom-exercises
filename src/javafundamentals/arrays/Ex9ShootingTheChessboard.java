@@ -1,5 +1,7 @@
 package javafundamentals.arrays;
 
+import java.util.Scanner;
+
 /**
  * Create a chessboard that you can print (You can reuse the one from exercise 5).
  * Ask the user input for a coordinate (for example 'c6') and then substitute the 'c6' text for 'XX'
@@ -35,4 +37,66 @@ package javafundamentals.arrays;
  */
 
 public class Ex9ShootingTheChessboard {
+    public static void main(String[] args) {
+        String[][] chessPositions = new String[8][8];
+        String chosenPositions = "";
+
+        for (int i = 0; i < chessPositions.length; i++) {
+            for (int j = 0; j < chessPositions[i].length; j++) {
+                char column = (char) ('a' + j);
+                chessPositions[i][j] = Character.toString(column) + (i + 1);
+            }
+        }
+
+        startChessGame(chessPositions,chosenPositions);
+
+    }
+
+    static void startChessGame (String[][] chessPositions, String chosenPositions) {
+        Scanner scanner = new Scanner(System.in);
+
+        printChessboard(chessPositions);
+        System.out.println("Pick a spot to shoot on the chessboard");
+
+        String chosenSpot = scanner.nextLine();
+
+        boolean spotAlreadychosen = false;
+
+        boardChecker:
+        for (int i = 0; i < chessPositions.length; i++) {
+            for (int j = 0; j < chessPositions[i].length; j++) {
+                if (chessPositions[i][j].equals(chosenSpot)) {
+                    chosenPositions += chessPositions[i][j] + " ";
+                    chessPositions[i][j] = "XX";
+                    break boardChecker;
+                } else if (chosenPositions.contains(chosenSpot) && !chosenSpot.contains(" ")) {
+                    spotAlreadychosen = true;
+                    break boardChecker;
+                }
+            }
+        }
+
+        if (spotAlreadychosen) {
+            System.out.println("Aim for another, I'm already done!");
+        }
+
+        startChessGame(chessPositions, chosenPositions);
+    }
+
+    static void printChessboard (String[][] chessboardArray) {
+        System.out.println("*-----------------------*");
+        for (int i = 0; i < chessboardArray.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < chessboardArray.length; j++) {
+                if (j != chessboardArray.length - 1) {
+                    System.out.print(chessboardArray[i][j] + " ");
+                } else {
+                    System.out.print(chessboardArray[i][j] + "|");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("*-----------------------*");
+    }
+
 }
