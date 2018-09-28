@@ -6,4 +6,8 @@ package javafundamentals.collections.list;
  */
 
 public class Ex03MaxValue {
+
+    public static void main(String[] args) {
+        
+    }
 }
