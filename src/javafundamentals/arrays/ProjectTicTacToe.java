@@ -15,29 +15,41 @@ import java.util.Scanner;
  */
 
 public class ProjectTicTacToe {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+
+    private static String[][] gameBoard = new String[3][3];
+
+
     public static void main(String[] args) {
-        String[][] gameBoard = new String[3][3];
 
-        initialiseBoard(gameBoard);
 
-        printBoard(gameBoard);
+        initialiseBoard();
 
-        playGame(gameBoard);
+        printBoard();
+
+        playGame();
     }
 
-    static void initialiseBoard(String[][] gameBoard) {
+    private static void initialiseBoard() {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[i].length; j++) {
-                gameBoard[i][j] = Character.toString((char) ('a' + (i * 3 + j)));
+                gameBoard[i][j] = Character.toString((char) ('a' + (i * gameBoard.length + j)));
             }
         }
     }
 
-    static void printBoard(String[][] gameBoard) {
+    private static void printBoard() {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[i].length; j++) {
-
-                System.out.print(gameBoard[i][j]);
+                if (gameBoard[i][j] == "X") {
+                    System.out.print(ANSI_GREEN + gameBoard[i][j] + ANSI_RESET);
+                } else if (gameBoard[i][j] == "O") {
+                    System.out.print(ANSI_RED + gameBoard[i][j] + ANSI_RESET);
+                } else {
+                    System.out.print(gameBoard[i][j]);
+                }
 
                 if (j != gameBoard[i].length - 1) {
                     System.out.print(" | ");
@@ -52,31 +64,35 @@ public class ProjectTicTacToe {
         System.out.println();
     }
 
-    static void playGame(String[][] gameBoard) {
+    private static void playGame() {
 
         System.out.println("Type a letter to place an X");
 
-        userSelection(gameBoard);
+        userSelection();
 
-        if (checkWin(gameBoard, "X")) {
-            printBoard(gameBoard);
+        if (checkWin("X")) {
+            printBoard();
             System.out.println("Congratulations, you won!!");
+        } else if (checkDraw()) {
+            printBoard();
+            System.out.println("It's a draw!");
         } else {
 
-            aiSelection(gameBoard);
+            aiSelection();
 
-            printBoard(gameBoard);
+            printBoard();
 
-            if (checkWin(gameBoard,"O")) {
-                printBoard(gameBoard);
+            if (checkWin("O")) {
+                printBoard();
                 System.out.println("Sorry, you lost this game...");
-            } else { playGame(gameBoard);
-
+            } else {
+                playGame();
             }
         }
     }
 
-    static void userSelection(String[][] gameBoard) {
+
+    private static void userSelection() {
         Scanner scanner = new Scanner(System.in);
         try {
             String spotChosen = scanner.nextLine();
@@ -87,7 +103,7 @@ public class ProjectTicTacToe {
             for (int i = 0; i < gameBoard.length; i++) {
                 for (int j = 0; j < gameBoard[i].length; j++) {
                     if (gameBoard[i][j].equals(spotChosen)) {
-                        gameBoard[i][j] = "X";
+                        gameBoard[i][j] = ("X");
                         validSpotChosen = true;
                         break choiceChecker;
                     }
@@ -95,27 +111,27 @@ public class ProjectTicTacToe {
             }
             if (!validSpotChosen) {
                 System.out.println("This spot cannot be chosen, try again");
-                userSelection(gameBoard);
+                userSelection();
             }
 
         } catch (Exception e) {
             System.out.println("Invalid input, try again");
-            userSelection(gameBoard);
+            userSelection();
         }
     }
 
-    static void aiSelection(String[][] gameBoard) {
-        int randomColumn = (int) (Math.random() * 3 + 0);
-        int randomrow = (int) (Math.random() * 3 + 0);
+    private static void aiSelection() {
+        int randomColumn = (int) (Math.random() * gameBoard.length + 0);
+        int randomrow = (int) (Math.random() * gameBoard.length + 0);
 
         if (!gameBoard[randomColumn][randomrow].equals("X") && !gameBoard[randomColumn][randomrow].equals("O")) {
             gameBoard[randomColumn][randomrow] = "O";
         } else {
-            aiSelection(gameBoard);
+            aiSelection();
         }
     }
 
-    static boolean checkWin (String[][] gameBoard,String letter) {
+    private static boolean checkWin(String letter) {
         boolean winsHorizontally = false;
 
         //Check horizontal wins
@@ -165,4 +181,20 @@ public class ProjectTicTacToe {
         }
         return false;
     }
+
+    private static boolean checkDraw() {
+
+        boolean isDraw = true;
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard[i].length; j++) {
+                isDraw = isDraw && (gameBoard[i][j].equals("O") || gameBoard[i][j].equals("X"));
+            }
+        }
+        if (isDraw) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
