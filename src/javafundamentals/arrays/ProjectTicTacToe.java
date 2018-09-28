@@ -1,6 +1,8 @@
 package javafundamentals.arrays;
 
 
+import java.util.Scanner;
+
 /**
  * Fun time! Lets play tic tac toe! You will create your first videogame! Yeah!
  * <p>
@@ -21,7 +23,9 @@ public class ProjectTicTacToe {
 
 
     public static void main(String[] args) {
+        String[][] gameBoard = new String[3][3];
 
+        initialiseBoard(gameBoard);
 
         initialiseBoard();
 
