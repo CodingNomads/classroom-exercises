@@ -12,14 +12,17 @@ public class Ex01Interfaces {
         HousesForSale littleCottage = new HousesForSale();
         CarsForSale miniVan = new CarsForSale();
 
-        SalesMethods[] salesItems = new SalesMethods[2];
+        SellableItem[] salesItems = new SellableItem[2];
         salesItems[0]=littleCottage;
         salesItems[1]=miniVan;
 
         for (int i = 0; i < salesItems.length; i++) {
-            salesItems[i].onlinePhotos();
-            salesItems[i].signOnObject();
+            salesItems[i].takePhotos();
+            salesItems[i].putSignOnItem();
         }
+
+        miniVan.getCarHistory();
+        littleCottage.getHouseReady();
 
     }
 }
