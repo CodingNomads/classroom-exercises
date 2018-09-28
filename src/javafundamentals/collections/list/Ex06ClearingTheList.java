@@ -1,4 +1,4 @@
-package javafundamentals.collections.arraylist;
+package javafundamentals.collections.list;
 
 /**
  * Create a list with random numbers from 1 to 5
