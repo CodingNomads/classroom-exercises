@@ -23,6 +23,20 @@ package javafundamentals.classes;
 public class Zoo {
 
     public static void main(String[] args) {
-
+        Monkey monkey1 = new Monkey();
+        monkey1.setName("Bob");
+        Monkey monkey2 = new Monkey();
+        monkey2.setName("Billy");
+        BananaBasket basket1 = new BananaBasket();
+        Banana banana1 = new Banana();
+        banana1.setBananaType("Brazil banana");
+        Banana banana2=new Banana();
+        banana2.setBananaType("very yellow banana");
+        basket1.addBanana(banana1);
+        basket1.addBanana(banana2);
+        MonkeyCage cage1 = new MonkeyCage();
+        cage1.setMonkey(monkey1);
+        monkey1.eatingABanana(basket1);
+        monkey2.eatingABanana(basket1);
     }
 }
