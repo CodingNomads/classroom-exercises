@@ -23,6 +23,32 @@ package javafundamentals.classes;
 public class Zoo {
 
     public static void main(String[] args) {
+        Monkey bobo = new Monkey("Bobo");
+        Monkey harry = new Monkey("Harry");
+        Monkey chimpo = new Monkey("Chimpo");
+        Monkey steve = new Monkey("Steve");
 
+        MonkeyCage monkeyCage = new MonkeyCage(bobo, harry, chimpo);
+
+        Banana bigBanana = new Banana("Big Banana");
+        Banana mediumBanana = new Banana("Medium Banana");
+        Banana smallBanana = new Banana("Small Banana");
+
+        BananaBasket bananaBasket = new BananaBasket();
+
+        bananaBasket.addBananas(bigBanana,mediumBanana,smallBanana);
+
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
+
+        monkeyCage.feedMonkeyBanana(bobo,bananaBasket);
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
+        monkeyCage.feedMonkeyBanana(harry,bananaBasket);
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
+        monkeyCage.feedMonkeyBanana(steve,bananaBasket);
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
+        monkeyCage.feedMonkeyBanana(chimpo,bananaBasket);
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
+        monkeyCage.feedMonkeyBanana(bobo,bananaBasket);
+        System.out.println("There are " + bananaBasket.getNoOfBananas() + " bananas in the basket");
     }
 }
