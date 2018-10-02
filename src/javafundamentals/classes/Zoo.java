@@ -11,9 +11,9 @@ package javafundamentals.classes;
  * 4: Create another class that represents the food inside the recipients, for example, Banana
  * <p>
  * Based on the example the previous classes should:
- * - the MonkeyCage should contain Monkeys
- * - The Monkey should be able to eat bananas from the basket. (Create a method in Monkey that accepts BananaBasket)
- * - When a Monkey eats Banana from BananaBasket, the amount of Bananas in BananaBasket should decrease by 1.
+ * - The MonkeyCage contains Monkeys
+ * - The Monkey eats bananas. (Create a method in Monkey that accepts a Banana)
+ * - When a Banana is retrieved from the BananaBasket, the amount of Bananas in BananaBasket should decrease by 1.
  * <p>
  * Try to create more variables and more methods in those classes that represents more real world actions and properties
  * NOTE: All the classes should be in their own file.
