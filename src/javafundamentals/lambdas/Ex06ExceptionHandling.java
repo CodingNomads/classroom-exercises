@@ -13,17 +13,17 @@ public class Ex06ExceptionHandling {
     public static void main(String[] args) {
         Squarer squarer = new Squarer();
 
-//        try {
-//            squarer.square(14, input -> {
-//                if (input < (Integer.MAX_VALUE / Integer.MAX_VALUE)) {
-//                    return input * input;
-//                } else {
-//                    //throw new Exception();
-//                }
-//            });
-//        } catch (Exception e) {
-//            System.out.println("Input too large for Integer type");
-//        }
+        try {
+            squarer.square(14, input -> {
+                if (input < (Integer.MAX_VALUE / Integer.MAX_VALUE)) {
+                    return input * input;
+                } else {
+                    throw new RuntimeException();
+                }
+            });
+        } catch (RuntimeException e) {
+            System.out.println("Input too large for Integer type");
+        }
 
     }
 }

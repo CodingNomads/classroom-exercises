@@ -19,7 +19,7 @@ public class Ex03Lambdas {
 
         System.out.println(name);
 
-        tester.andyTest(inputName -> inputName == "Andy",name);
+        tester.andyTest(inputName -> inputName.equals("Andy"),name);
 
         name = tester.makeAndy(inputName -> {
             inputName = "Andy";
@@ -27,7 +27,7 @@ public class Ex03Lambdas {
         },name);
 
         System.out.println(name);
-        tester.andyTest(inputName -> inputName == "Andy",name);
+        tester.andyTest(inputName -> inputName.equals("Andy"),name);
 
     }
 }

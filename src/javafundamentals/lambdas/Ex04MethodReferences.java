@@ -1,6 +1,6 @@
 package javafundamentals.lambdas;
 
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * Create Class1 that contains a method that accepts a Functional Interface
@@ -14,29 +14,33 @@ import java.util.function.Function;
 
 public class Ex04MethodReferences {
     public static void main(String[] args) {
-        Converter converter = new Converter();
 
-        Function<Convertible,String> function = converter::toStringFromInt;
+        FiveComparer fiveComparer = new FiveComparer();
 
-        String convertedOutput = function.apply(input -> Integer.toString(input));
+        int numberToTest = 4;
 
+        System.out.println("Is " + numberToTest + " greater than five? " +
+                NumberTester.testNumber(numberToTest, FiveComparer::isGreaterThanFive));
 
+        numberToTest = 6;
 
-    }
-    public void staticMethod(){
-
+        System.out.println("Is " + numberToTest + " smaller than five? " +
+                NumberTester.testNumber(numberToTest, fiveComparer::isSmallerThanFive));
     }
 }
 
-@FunctionalInterface
-interface Convertible {
-    String convertToString (Integer input);
+class NumberTester {
+    static boolean testNumber(Integer input, Predicate<Integer> predicate) {
+        return predicate.test(input);
+    }
 }
 
-class Converter {
-    String toStringFromInt (Convertible convertible) {
-        return convertible.convertToString(44);
+class FiveComparer {
+    static boolean isGreaterThanFive(Integer input) {
+        return input > 5;
     }
 
-   // static
+    boolean isSmallerThanFive(Integer input) {
+        return input < 5;
+    }
 }
