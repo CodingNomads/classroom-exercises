@@ -24,8 +24,6 @@ public class ProjectTicTacToe {
 
         initialiseBoard();
 
-        initialiseBoard();
-
         printBoard();
 
         playGame();
