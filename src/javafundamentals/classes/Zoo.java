@@ -6,7 +6,7 @@ package javafundamentals.classes;
  * This class represents the a Zoo. Its where you will be creating new instances of your other classes and use them.
  * <p>
  * 1: Create another class that represents a place of a Zoo, for example, MonkeyCage.
- * 2: Create another class that represents the animals that go into that place, for example, Monkey.
+ * 2: Create another class that represents the animals that going into that place, for example, Monkey.
  * 3: Create another class that represents a recipient for the food of the animals, for example, BananaBasket.
  * 4: Create another class that represents the food inside the recipients, for example, Banana
  * <p>

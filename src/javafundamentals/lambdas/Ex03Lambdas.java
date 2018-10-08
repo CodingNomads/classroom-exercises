@@ -20,25 +20,26 @@ public class Ex03Lambdas {
                 return o.equals("Java");
             }
         };
-        System.out.println(predicate.test(true));
+        System.out.println(predicate.test("Java"));
 
         //now with lambda
         Predicate predicate2 = (o) -> {
             return o.equals("java");
         };
-        System.out.println(predicate2.test(true));
+        System.out.println(predicate2.test("java"));
         //with anonymous method
         Function function = new Function() {
             @Override
             public Object apply(Object o) {
-                return null;
+                return o.equals("3");
+
             }
         };
-        System.out.println(function.apply(3));
+        System.out.println(function.apply("3"));
 
         //now with lambda
-        Function function2 = (n) -> null;
+        Function function2 = (n) -> n.equals("Hello");
 
-        System.out.println(function2.apply(5));
+        System.out.println(function2.apply("Hello"));
     }
 }

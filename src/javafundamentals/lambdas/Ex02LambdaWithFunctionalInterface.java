@@ -8,4 +8,12 @@ package javafundamentals.lambdas;
  */
 
 public class Ex02LambdaWithFunctionalInterface {
+    public static void main(String[] args) {
+
+        Ex2ClassWithMethod classWithMethod = new Ex2ClassWithMethod();
+
+        classWithMethod.going((name) -> System.out.println(name + " is overriding the going method!"), "Andrea");
+
+
+    }
 }
