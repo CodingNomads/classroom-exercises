@@ -25,7 +25,7 @@ public class ProjectTicTacToe {
     public static void main(String[] args) {
         String[][] gameBoard = new String[3][3];
 
-        initialiseBoard(gameBoard);
+        initialiseBoard();
 
         initialiseBoard();
 
