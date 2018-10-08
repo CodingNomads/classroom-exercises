@@ -22,7 +22,6 @@ public class ProjectTicTacToe {
 
     public static void main(String[] args) {
 
-        initialiseBoard();
 
         printBoard();
 
