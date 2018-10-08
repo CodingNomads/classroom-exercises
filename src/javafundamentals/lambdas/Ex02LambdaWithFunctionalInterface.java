@@ -8,4 +8,19 @@ package javafundamentals.lambdas;
  */
 
 public class Ex02LambdaWithFunctionalInterface {
+    public static void main(String[] args) {
+        Printer printer = new Printer();
+
+        printer.printText("Hello", input -> System.out.println(input));
+    }
+}
+
+interface Printable {
+    void print(String s);
+}
+
+class Printer {
+    public void printText(String s, Printable printable) {
+        printable.print(s);
+    }
 }

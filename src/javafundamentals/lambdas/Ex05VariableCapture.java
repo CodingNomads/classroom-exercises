@@ -1,5 +1,7 @@
 package javafundamentals.lambdas;
 
+import java.util.function.Predicate;
+
 /**
  * Create a class that contains a method that accepts a Functional Interface
  * Create a field in this class Ex05VariableCapture
@@ -10,4 +12,20 @@ package javafundamentals.lambdas;
  */
 
 public class Ex05VariableCapture {
+    private static String trueString = "True";
+
+    public static void main(String[] args) {
+        StringTester stringTester = new StringTester();
+        boolean stringTestOutput = stringTester.testString("True", input -> input.equals(trueString));
+        System.out.println(stringTestOutput);
+
+        stringTestOutput = stringTester.testString("False", input -> input.equals(trueString));
+        System.out.println(stringTestOutput);
+    }
+}
+
+class StringTester {
+    boolean testString (String input, Predicate predicate) {
+        return predicate.test(input);
+    }
 }
