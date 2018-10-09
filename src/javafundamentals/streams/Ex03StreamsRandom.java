@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -14,13 +15,12 @@ import java.util.stream.IntStream;
 
 public class Ex03StreamsRandom {
     public static void main(String[] args) {
-//        Supplier<IntStream> intStreamSupplier = () -> IntStream.
 
-        List<Integer> integerList = new ArrayList<>();
-
-        new Random().ints(100,0,100)
-                .filter((integer) -> integer%2 == 0).limit(3)
-                .forEach(element -> integerList.add(element));
+        List<Integer> integerList = new Random().ints(100,0,100)
+                .filter((integer) -> integer%2 == 0)
+                .limit(3)
+                .boxed()
+                .collect(Collectors.toList());
 
         for (Integer integer : integerList) {
             System.out.println(integer);
