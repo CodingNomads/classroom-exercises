@@ -2,5 +2,15 @@ package classes;
 
 public class BananaBasket {
 
-    static int numberOfBananas = 10;
+    private int numberOfBananas = 10;
+
+    public int getNumberOfBananas() {
+        return numberOfBananas;
+    }
+
+    public void setNumberOfBananas(int bananasEaten) {
+        numberOfBananas-=bananasEaten;
+        System.out.println("We only have " + numberOfBananas + " left");
+    }
+
 }

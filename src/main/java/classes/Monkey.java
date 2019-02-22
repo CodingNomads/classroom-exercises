@@ -2,13 +2,16 @@ package classes;
 
 public class Monkey extends MonkeyCage {
 
-    public void eatBanana(Banana element) {
+    public void eatOneBanana(Banana element) {
+
+        BananaBasket basket = new BananaBasket();
 
         System.out.println("Ah ah ooh ooh ooh me want to eat banana!");
 
-        BananaBasket.numberOfBananas--;
+        basket.setNumberOfBananas(1);
 
-        System.out.println("Basket now only have " + BananaBasket.numberOfBananas + " bananas - Nooooo!");
+
+        System.out.println();
 
     }
 

@@ -30,7 +30,11 @@ public class Zoo {
 
         Monkey simba = new Monkey();
 
-        simba.eatBanana(sweetBananito);
+        simba.eatOneBanana(sweetBananito);
+
+
+
+
 
     }
 }
