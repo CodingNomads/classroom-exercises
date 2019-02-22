@@ -24,5 +24,24 @@ public class Zoo {
 
     public static void main(String[] args) {
 
+        Monkey tarzan = new Monkey();
+        tarzan.setMonkeyName("tarzan");
+
+        Monkey simon = new Monkey();
+        simon.setMonkeyName("simon");
+
+        Monkey[] monkeysGoingInTheCage = {simon,tarzan};
+
+        MonkeyCage cage = new MonkeyCage();
+        cage.setPrimatesInCage(monkeysGoingInTheCage);
+
+        BananaBasket basket1 = new BananaBasket();
+        basket1.setNumberOfBananas(10);
+
+        tarzan.eatOneBananaFrom(basket1);
+        simon.eatOneBananaFrom(basket1);
+
+        System.out.println("We have a total of: " + basket1.getNumberOfBananas() + " bananas left");
+
     }
 }
