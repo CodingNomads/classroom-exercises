@@ -21,8 +21,30 @@ package classes;
 
 
 public class Zoo {
-
     public static void main(String[] args) {
 
+        Panda panda1 = new Panda("Panda", "Male", 5);
+        Panda panda2 = new Panda("Panda", "Female", 3);
+        Panda panda3 = new Panda("Panda", "Female", 6);
+
+        panda2.setPregnant(true);
+        panda3.setPregnant(false);
+
+        PandaFood pandaFood = new PandaFood(3000, true, 10000);
+
+        panda1.feed(pandaFood, 500);
+        panda2.feed(pandaFood, 500);
+        panda3.feed(pandaFood,500);
+
+        System.out.println("Panda1 " + panda1.toString());
+        System.out.println("Panda2 " + panda2.toString());
+        System.out.println("Panda3 " + panda3.toString());
+
+        System.out.println(pandaFood.toString());
     }
 }
+
+
+
+
+
