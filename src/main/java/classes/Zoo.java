@@ -24,5 +24,28 @@ public class Zoo {
 
     public static void main(String[] args) {
 
+        // Creating the Monkey cage
+        MonkeyCage monkeyCage1 = new MonkeyCage();
+        monkeyCage1.setEnclosureType("Cage");
+        monkeyCage1.setEnclosureMaxCapacity(3);
+
+        // Creating the Monkey Cage with array
+        MonkeyCage monkeyCageArray = new MonkeyCage();
+
+        // Creating Monkey
+        Monkey monkey1 = new Monkey();
+        monkey1.setMonkeyType("Chimpanzee");
+
+        // Adding the Monkey to the cage
+        monkeyCage1.getEnclosureMaxCapacity();
+        monkeyCage1.addMonkey();
+        System.out.println(monkeyCage1.getEnclosureCurrentCapacity());
+        monkeyCage1.addMonkey();
+        System.out.println(monkeyCage1.getEnclosureCurrentCapacity());
+        monkeyCage1.addMonkey();
+        System.out.println(monkeyCage1.getEnclosureCurrentCapacity());
+        monkeyCage1.addMonkey();
+
+
     }
 }
