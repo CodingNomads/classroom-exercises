@@ -2,31 +2,13 @@ package classes;
 
 public class MonkeyCage {
 
-    private int size;
-    private int height;
-    private String color;
+    private Monkey[] primatesInCage;
 
-    public int getSize() {
-        return size;
+    public Monkey[] getPrimatesInCage() {
+        return primatesInCage;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setPrimatesInCage(Monkey[] primatesInCage) {
+        this.primatesInCage = primatesInCage;
     }
 }

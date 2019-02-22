@@ -1,18 +1,24 @@
 package classes;
 
-public class Monkey extends MonkeyCage {
+public class Monkey {
 
-    public void eatOneBanana(Banana element) {
+    private String monkeyName;
 
-        BananaBasket basket = new BananaBasket();
+    public void eatOneBananaFrom(BananaBasket basket) {
 
-        System.out.println("Ah ah ooh ooh ooh me want to eat banana!");
-
-        basket.setNumberOfBananas(1);
-
-
-        System.out.println();
+        System.out.println(monkeyName + " is about to eat a banana!");
+        basket.eatOneBanana();
 
     }
+
+    public String getMonkeyName() {
+        return monkeyName;
+    }
+
+    public void setMonkeyName(String monkeyName) {
+        this.monkeyName = monkeyName;
+    }
+
+
 
 }

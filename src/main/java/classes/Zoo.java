@@ -24,17 +24,24 @@ public class Zoo {
 
     public static void main(String[] args) {
 
-        Banana sweetBananito = new Banana();
+        Monkey tarzan = new Monkey();
+        tarzan.setMonkeyName("tarzan");
 
-        sweetBananito.setBananaType("Sweet Banana");
+        Monkey simon = new Monkey();
+        simon.setMonkeyName("simon");
 
-        Monkey simba = new Monkey();
+        Monkey[] monkeysGoingInTheCage = {simon,tarzan};
 
-        simba.eatOneBanana(sweetBananito);
+        MonkeyCage cage = new MonkeyCage();
+        cage.setPrimatesInCage(monkeysGoingInTheCage);
 
+        BananaBasket basket1 = new BananaBasket();
+        basket1.setNumberOfBananas(10);
 
+        tarzan.eatOneBananaFrom(basket1);
+        simon.eatOneBananaFrom(basket1);
 
-
+        System.out.println("We have a total of: " + basket1.getNumberOfBananas() + " bananas left");
 
     }
 }

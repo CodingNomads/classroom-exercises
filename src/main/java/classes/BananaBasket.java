@@ -2,15 +2,18 @@ package classes;
 
 public class BananaBasket {
 
-    private int numberOfBananas = 10;
+    private int numberOfBananas;
 
     public int getNumberOfBananas() {
         return numberOfBananas;
     }
 
-    public void setNumberOfBananas(int bananasEaten) {
-        numberOfBananas-=bananasEaten;
-        System.out.println("We only have " + numberOfBananas + " left");
+    public void setNumberOfBananas(int numberOfBananas) {
+        this.numberOfBananas = numberOfBananas;
+    }
+
+    public void eatOneBanana() {
+        numberOfBananas--;
     }
 
 }
