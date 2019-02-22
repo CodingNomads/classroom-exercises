@@ -24,5 +24,13 @@ public class Zoo {
 
     public static void main(String[] args) {
 
+        Banana sweetBananito = new Banana();
+
+        sweetBananito.setBananaType("Sweet Banana");
+
+        Monkey simba = new Monkey();
+
+        simba.eatBanana(sweetBananito);
+
     }
 }
