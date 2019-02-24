@@ -8,4 +8,27 @@ package inheritance;
  */
 
 public class Ex01Inheritance {
+
+    public static void main(String[] args) {
+
+        Vehicles vehicle = new Vehicles();
+        vehicle.turnOn();
+        vehicle.accelerate();
+        vehicle.stop();
+        System.out.println();
+
+        Motorcycle moto = new Motorcycle();
+        moto.turnOn();
+        moto.gearUp();
+        moto.stop();
+        System.out.println();
+
+        Airplane avion = new Airplane();
+        avion.turnOn();
+        avion.fly();
+        avion.land();
+
+
+    }
+
 }
