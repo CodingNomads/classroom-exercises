@@ -5,5 +5,13 @@ package annotations;
  * Use the annotation to annotate this class (Ex01Annotation)
  */
 
-public class Ex01Annotation {
+@interface StudentNotes{
+    String likeIt = "YES";
+    String complexity = "EASY";
+    String bootcamp() default "CodingNomads";
+    boolean useful = true;
+    int numberOfTries = 3;
+}
+
+@StudentNotes public class Ex01Annotation {
 }
