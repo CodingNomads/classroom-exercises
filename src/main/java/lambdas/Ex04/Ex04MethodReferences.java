@@ -17,7 +17,6 @@ class Compare {
     public static void main(String[] args) {
         System.out.println(AnotherCompare.isMoreThan((num1,num2) -> num1 > num2));
     }
-    
     public boolean isMoreThan(BiPredicate<Integer,Integer> biPredicate,Integer num1,Integer num2) {
         return biPredicate.test(num1,num2);
     }
