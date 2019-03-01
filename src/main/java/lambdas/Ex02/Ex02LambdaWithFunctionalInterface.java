@@ -1,4 +1,4 @@
-package lambdas;
+package lambdas.Ex02;
 
 /**
  * Create one functional interface with only one method.
@@ -8,4 +8,15 @@ package lambdas;
  */
 
 public class Ex02LambdaWithFunctionalInterface {
+    public static void main(String[] args) {
+
+        screamIt(() -> System.out.println("AHHHHHHH!"));
+        screamIt(() -> System.out.println("OH"));
+
+    }
+
+    public static void screamIt(Contract contract) {
+        contract.yell();
+        System.out.println("otro grito");
+    }
 }
