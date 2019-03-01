@@ -1,5 +1,8 @@
 package streams;
 
+import java.util.Random;
+import java.util.stream.IntStream;
+
 /**
  * Create a list with 10 random elements.
  * Find any element
@@ -8,4 +11,8 @@ package streams;
  */
 
 public class Ex06MaybeInThere {
+    public static void main(String[] args) {
+        IntStream myStream = new Random().ints(10,1,10);
+        System.out.println(myStream.findAny().orElse(0));
+    }
 }
