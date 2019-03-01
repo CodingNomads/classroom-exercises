@@ -6,5 +6,21 @@ package lambdas;
  */
 
 public class Ex01ThreadWithLambdas {
+    public static void main(String[] args) {
+
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Im anonymus");
+            }
+        });
+
+        thread1.start();
+
+        Thread thread2 = new Thread(() -> System.out.println("Im a lambda"));
+        thread2.start();
+
+    }
+
 
 }
