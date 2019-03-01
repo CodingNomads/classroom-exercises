@@ -1,6 +1,8 @@
 package lambdas.Ex04;
 
-import java.util.function.BiPredicate;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 /**
  * Create Class1 that contains a method that accepts a Functional Interface
@@ -12,23 +14,29 @@ import java.util.function.BiPredicate;
  * Call method2 from class1 using a method reference
  */
 
-class Compare {
+class Calculation {
 
     public static void main(String[] args) {
-        System.out.println(AnotherCompare.isMoreThan((num1,num2) -> num1 > num2));
+        Integer multiplication = new Calculation().count(Operation::multiplyNumbers,10,20);
+        Integer addition = new Calculation().count(new Operation()::sumNumbers, 10, 20);
+
+        System.out.println(multiplication);
+        System.out.println(addition);
     }
-    public boolean isMoreThan(BiPredicate<Integer,Integer> biPredicate,Integer num1,Integer num2) {
-        return biPredicate.test(num1,num2);
+
+    public Integer count (BiFunction<Integer, Integer, Integer> function, Integer num1, Integer num2) {
+        return function.apply(num1,num2);
     }
 }
 
-class AnotherCompare {
+class Operation {
 
-    public static boolean isMoreThan(BiPredicate<Integer,Integer> biPredicate) {
-        return biPredicate.test(30,20);
+    public static Integer multiplyNumbers (Integer num1,Integer num2) {
+        return num1 * num2;
     }
 
+    public Integer sumNumbers (Integer num1,Integer num2) {
+        return num1 + num2;
+    }
 }
-
-
 
