@@ -9,3 +9,5 @@ package lambdas;
 
 public class Ex06ExceptionHandling {
 }
+
+

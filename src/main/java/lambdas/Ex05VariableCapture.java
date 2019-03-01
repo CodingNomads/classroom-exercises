@@ -10,4 +10,30 @@ package lambdas;
  */
 
 public class Ex05VariableCapture {
+
+    String concat(Change change, String string1, String string2){
+        return change.concat(string1, string2);
+    }
+
+    public static void main(String[] args) {
+        String string1 = "Coding";
+
+        Change change = String::concat,str1,str2;
+
+        String result = change.concat(string1,"nomads");
+
+        System.out.println(result);
+
+    }
+}
+
+class StringUtil implements Change{
+    public String concat(String string1, String string2){
+        return string1.concat(string2);
+    }
+}
+
+interface Change{
+    String concat (String string1, String string2);
+
 }
