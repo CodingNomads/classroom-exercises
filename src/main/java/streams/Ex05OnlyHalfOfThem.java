@@ -1,5 +1,9 @@
 package streams;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 /**
  *  Create an stream with ints from 1 to 100
  *  skip the first 10 elements then print the rest
@@ -7,4 +11,10 @@ package streams;
  */
 
 public class Ex05OnlyHalfOfThem {
+
+    public static void main(String[] args) {
+
+        List<Integer> intList = IntStream.range(1, 101).skip(10).boxed().collect(Collectors.toList());
+        intList.stream().forEach(System.out::println);
+    }
 }
