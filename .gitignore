@@ -15,3 +15,4 @@
 # IntelliJ
 out/
 .idea/**
+.gradle
