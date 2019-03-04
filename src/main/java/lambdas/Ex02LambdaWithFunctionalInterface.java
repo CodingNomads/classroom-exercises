@@ -8,4 +8,15 @@ package lambdas;
  */
 
 public class Ex02LambdaWithFunctionalInterface {
+    public static void main(String[] args) {
+        Ex02Interface isEqual = (a,b) -> (a == b);
+
+        if(isEqual.test(10,10)) {
+            System.out.println("equal");
+        }
+
+        if(!isEqual.test(10,5)) {
+            System.out.println("not equal");
+        }
+    }
 }

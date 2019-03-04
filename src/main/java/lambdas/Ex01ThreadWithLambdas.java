@@ -7,4 +7,14 @@ package lambdas;
 
 public class Ex01ThreadWithLambdas {
 
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> System.out.println("Im anoymous"));
+
+        Thread t1 = new Thread(() -> System.out.println("Im a lambda"));
+
+        t.start();
+        t1.start();
+
+    }
 }
+
